@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NurtureFirst Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>NurtureFirst Database</h1>
+        <nav>
+            <a href="/" class="{{ 'active' if active_page == 'home' else '' }}">Home</a>
+            <a href="/Features" class="{{ 'active' if active_page == 'features' else '' }}">Features</a>
+            <a href="/About" class="{{ 'active' if active_page == 'about' else '' }}">About</a>
+        </nav>
+    </header>
+    <div class="gradient-strip"></div>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Copyright © 2025 NurtureFirst Database, All Rights Reserved |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Privacy Policy</a>
+        </p>
+    </footer>
+</body>
+</html>
