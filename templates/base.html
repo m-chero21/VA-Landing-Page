@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <title>The Verse</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-      
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icons/NF Logo.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/va_logo.jpg') }}">
 </head>
+
 <body>
     <header>
         <h1>The Verse</h1>
         <nav>
             <a href="/" class="{{ 'active' if active_page == 'home' else '' }}">Home</a>
-            <!-- <a href="/Features" class="{{ 'active' if active_page == 'features' else '' }}">Features</a>
-            <a href="/About" class="{{ 'active' if active_page == 'about' else '' }}">About</a> -->
+          
         </nav>
     </header>
     <div class="gradient-strip"></div>
