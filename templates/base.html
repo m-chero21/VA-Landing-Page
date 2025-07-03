@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NurtureFirst Database</title>
+    <title>The Verse</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
       
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='icons/NF Logo.png') }}">
 </head>
 <body>
     <header>
-        <h1>NurtureFirst Database</h1>
+        <h1>The Verse</h1>
         <nav>
             <a href="/" class="{{ 'active' if active_page == 'home' else '' }}">Home</a>
-            <a href="/Features" class="{{ 'active' if active_page == 'features' else '' }}">Features</a>
-            <a href="/About" class="{{ 'active' if active_page == 'about' else '' }}">About</a>
+            <!-- <a href="/Features" class="{{ 'active' if active_page == 'features' else '' }}">Features</a>
+            <a href="/About" class="{{ 'active' if active_page == 'about' else '' }}">About</a> -->
         </nav>
     </header>
     <div class="gradient-strip"></div>
@@ -23,7 +23,7 @@
     </main>
 
     <footer>
-        <p>Copyright © 2025 NurtureFirst Database, All Rights Reserved |
+        <p>Copyright © 2025 Virtual Analytics, All Rights Reserved |
             <a href="#">Terms & Conditions</a> |
             <a href="#">Privacy Policy</a>
         </p>
