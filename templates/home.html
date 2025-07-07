@@ -14,7 +14,59 @@
     <div class="hero-image">
           
           <div class="sample-dashboard">
-            <img src="{{ url_for('static', filename='icons/verse.jpg') }}" alt="The Verse Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                        <!-- Chart.js CDN -->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <!-- Chart Container Inside Your Styled Div -->
+            <div class="sample-dashboard">
+                <canvas id="positiveTrendChart"></canvas>
+            </div>
+
+              <script>
+                // Positive Trend Line Chart with Black Axes
+                const ctx = document.getElementById('positiveTrendChart').getContext('2d');
+                const positiveTrendChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                        datasets: [{
+                            label: 'Growth',
+                            data: [10, 15, 20, 30, 45, 60, 80],
+                            fill: true,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.4,
+                            pointBackgroundColor: '#fff',
+                            pointBorderColor: 'rgba(75, 192, 192, 1)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                grid: {
+                                    color: 'black'
+                                },
+                                ticks: {
+                                    color: 'black'
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    color: 'black'
+                                },
+                                ticks: {
+                                    color: 'black'
+                                },
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+              </script>
+
+
           </div>
 
           

@@ -110,7 +110,13 @@ nav a.active {
     border: 1px dashed #ccc;
     padding: 60px 20px;
     border-radius: 6px;
-    color: #fff;
+    color: #3f3f73;
+    position: relative;
+    height: 300px; /* You can adjust height as needed */
+}
+.sample-dashboard canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* WHO IT'S FOR SECTION */
