@@ -12,69 +12,70 @@
   <link rel="icon" href="{{ url_for('static', filename='icons/va_logo.jpg') }}">
 </head>
 
-<body class="min-h-screen flex flex-col bg-white text-gray-800 font-sans">
+<body
+  class="min-h-screen flex flex-col font-sans text-gray-800
+         bg-[linear-gradient(to_bottom,_#0ba3c1_0%,_#152238_44%,_#1c2a40_60%,_#eef2f7_95%,_#ffffff_100%)]">
+
+
   <!-- Header -->
-  <header class="bg-[#0c1123] text-white px-6 sm:px-8 py-5 flex flex-wrap justify-between items-center">
-    <h1 class="text-xl font-semibold">the verse</h1>
+  <header class="bg-[#0c1123]/95 text-white px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap justify-between items-center">
+    <h1 class="text-lg sm:text-xl font-semibold">the verse</h1>
     <nav class="flex flex-col sm:flex-row gap-2 sm:gap-6 mt-2 sm:mt-0">
       <a href="/" class="{% if active_page == 'home' %}text-[#1cb3c9] border-b-2 border-[#1cb3c9] pb-0.5{% else %}text-gray-300 hover:text-[#1cb3c9]{% endif %} font-medium transition">Home</a>
       <a href="/login" class="{% if active_page == 'login' %}text-[#1cb3c9] border-b-2 border-[#1cb3c9] pb-0.5{% else %}text-gray-300 hover:text-[#1cb3c9]{% endif %} font-medium transition">Login</a>
     </nav>
   </header>
 
-  <!-- Divider -->
+  <!-- Thin divider -->
   <div class="h-1 bg-[linear-gradient(to_right,_#0ba3c1_0%,_#0c1123_50%,_#f9f9f9_100%)]"></div>
 
   <!-- Main -->
   <main class="flex-grow">
     <!-- Hero -->
-    <section class="w-full min-h-[738px] bg-[linear-gradient(to_bottom,_#0ba3c1_0%,_#0c1123_50%,_#f9f9f9_100%)] text-white py-16 px-4 sm:px-6">
-      <div class="max-w-[1450px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12 h-full">
+    <section class="w-full text-white py-12 sm:py-16 px-4 sm:px-6">
+      <div class="max-w-[1450px] mx-auto flex flex-col md:flex-row items-center gap-10 lg:gap-12">
+        
         <!-- Text -->
-        <div class="flex-1 min-w-[280px] text-center md:text-left space-y-6">
-          <h2 class="text-2xl sm:text-3xl font-bold leading-snug">Manage Claims Data with Ease</h2>
-          <p class="text-base sm:text-lg max-w-xl mx-auto md:mx-0">
+        <div class="min-w-[260px] md:basis-[45%] space-y-4 sm:space-y-6 text-center md:text-left">
+          <h2 class="text-3xl sm:text-2xl lg:text-4xl font-bold leading-tight">
+            Manage Claims Data with Ease
+          </h2>
+          <p class="text-base sm:text-lg lg:text-l/6 max-w-xl mx-auto md:mx-0 text-white/90">
             The Verse is an innovative application designed to enhance claims prediction in the insurance sector,
             empowering insurers with accurate, data-driven insights to improve decision-making and operational efficiency.
           </p>
           <a href="/login"
-             class="inline-block min-w-[250px] text-center bg-[#1cb3c9] hover:bg-[#148ea1] text-white px-6 py-3 rounded font-semibold text-lg sm:text-xl transition">
+             class="inline-block min-w-[200px] sm:min-w-[240px] text-center bg-[#1cb3c9] hover:bg-[#148ea1] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded font-semibold text-base sm:text-lg transition">
             Login
           </a>
         </div>
 
-        <!-- “SVG-like” Video (no controls) -->
-        <div class="flex-1 min-w-[280px] w-full text-center">
-          <div class="bg-white/10 border border-dashed border-gray-300 p-4 sm:p-6 rounded-xl h-[580px] sm:h-[980px] md:h-[550px] w-full">
-            <video
-              class="w-full h-full rounded-lg object-cover pointer-events-none"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="auto"
-              aria-label="Hero animation"
-            >
-              <!-- Make sure the filename & case are exact -->
-              <source src="{{ url_for('static', filename='icons/Video.mp4') }}" type="video/mp4" />
-              <!-- Optional WebM fallback if you add one later -->
-              <!-- <source src="{{ url_for('static', filename='icons/Video.webm') }}" type="video/webm" /> -->
-            </video>
-            <noscript>
-              <img src="{{ url_for('static', filename='icons/video_poster.jpg') }}" alt="Hero illustration" class="w-full h-full rounded-lg object-cover" />
-            </noscript>
+        <!-- Video (behaves like an animated image) -->
+        <div class="w-full min-w-[260px] md:basis-[55%]">
+          <div class="bg-white/10 border border-dashed border-gray-300/70 p-3 sm:p-4 rounded-xl">
+            <div class="aspect-video w-full rounded-lg overflow-hidden">
+              <video
+                class="w-full h-full object-cover pointer-events-none"
+                autoplay muted loop playsinline preload="auto"
+                aria-label="Hero animation"
+                poster="{{ url_for('static', filename='icons/video_poster.jpg') }}"
+              >
+                <source src="{{ url_for('static', filename='icons/Video.mp4') }}" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-white border-t mt-10 text-center py-5 text-sm text-gray-600">
-    <p>
+  <!-- Footer (transparent so the light gradient shows through) -->
+  <footer class="text-center py-6 sm:py-8 text-sm">
+    <p class="text-gray-800/90">
       &copy; 2025 Virtual Analytics, All Rights Reserved |
-      <a href="#" class="text-black font-semibold hover:underline mx-1">Terms &amp; Conditions</a> |
-      <a href="#" class="text-black font-semibold hover:underline mx-1">Privacy Policy</a>
+      <a href="#" class="text-gray-900 font-semibold hover:underline mx-1">Terms &amp; Conditions</a> |
+      <a href="#" class="text-gray-900 font-semibold hover:underline mx-1">Privacy Policy</a>
     </p>
   </footer>
 </body>
